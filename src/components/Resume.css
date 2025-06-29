@@ -1,0 +1,29 @@
+.r {
+    font-family:'Times New Roman', Times, serif; 
+    width:794px; 
+    height:1122px; 
+    box-sizing: border-box;
+    border-style:solid; 
+    padding:10px; 
+
+}
+
+.name, .pInfo {
+    text-align:center; 
+}
+
+.section-header {
+
+    border-bottom:2px solid black; 
+}
+
+.details {
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between; 
+}
+
+.details h2 {
+    margin:0px; 
+}
+

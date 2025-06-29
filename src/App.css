@@ -1,0 +1,24 @@
+body {
+    margin:0px; 
+}
+
+.app-container {
+    display:grid; 
+    grid-template-columns: 1fr 2fr; 
+    width:100vw; 
+    height:100vh; 
+    overflow:hidden; 
+    background-color:#f7f9fc; 
+}
+
+.forms {
+    padding:20px; 
+    display:grid; 
+    background-color:#1e3a8a; 
+}
+
+.resume {
+    display:flex; 
+    justify-content:center; 
+    padding:20px; 
+}
