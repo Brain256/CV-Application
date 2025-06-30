@@ -7,18 +7,15 @@ body {
     grid-template-columns: 525px 2fr;
     width:100vw; 
     height:100vh; 
-    overflow:hidden; 
     background-color:#f7f9fc; 
 }
 
 .forms {
     padding:20px; 
-    overflow-y:auto; 
     background-color:#1e3a8a; 
 }
 
 .resume {
-    min-width:800px; 
     display:flex; 
     justify-content:center; 
     padding:20px; 
@@ -43,3 +40,58 @@ body {
     border-radius:0px; 
     border-bottom: 4px solid #3b82f6; 
 }
+
+@media (max-width:1000px) {
+    .app-container {
+        display:grid; 
+        grid-template-columns:1fr; 
+    }
+
+    .forms {
+        width:100vw; 
+        padding:20px; 
+        background-color:#1e3a8a; 
+    }
+
+    .r {
+    font-family:'Times New Roman', Times, serif; 
+    width:100vw; 
+    height:auto; 
+    border-style:solid; 
+    }
+
+    .resume {
+        padding: 0px;
+        min-width: 100vw; 
+        box-sizing: border-box;
+    }
+}
+
+
+@media (max-width:767px) {
+    .app-container {
+        display:grid; 
+        grid-template-columns:1fr; 
+    }
+
+    .forms {
+        width:100vw; 
+        padding:20px; 
+        background-color:#1e3a8a; 
+    }
+
+    .r {
+    font-family:'Times New Roman', Times, serif; 
+    width:100vw; 
+    height:auto; 
+    border-style:solid; 
+    }
+
+    .resume {
+        padding: 0px;
+        min-width: 100vw; 
+        box-sizing: border-box;
+    }
+}
+
+

@@ -1,11 +1,11 @@
 .r {
     font-family:'Times New Roman', Times, serif; 
-    width:794px; 
+    max-width:794px; 
+    width:100%; 
     height:1122px; 
     box-sizing: border-box;
     border-style:solid; 
     padding:10px; 
-
 }
 
 .name, .pInfo {
