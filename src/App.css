@@ -4,7 +4,7 @@ body {
 
 .app-container {
     display:grid; 
-    grid-template-columns: 1fr 2fr; 
+    grid-template-columns: 900px 2fr; 
     width:100vw; 
     height:100vh; 
     overflow:hidden; 
@@ -14,6 +14,8 @@ body {
 .forms {
     padding:20px; 
     display:grid; 
+    overflow-y:auto; 
+    grid-template-rows: 1fr 2fr 2fr; 
     background-color:#1e3a8a; 
 }
 

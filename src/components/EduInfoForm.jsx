@@ -1,6 +1,8 @@
 import { useState } from "react"; 
 import "./Form.css"
 
+import trashIcon from "/src/assets/trash.png"
+
 function EduInfoForm({ educationList, setEducationList }) {
 
     const [active, setActive] = useState(true); 
@@ -39,12 +41,14 @@ function EduInfoForm({ educationList, setEducationList }) {
             <h1>Education</h1>
             {educationList.map((item, index) => {
                 return (
-                <div key={item.id}>
-                    <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.schoolName} name="schoolName" placeholder="Enter School Name"></input>
-                    <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.program} name="program" placeholder="Enter Program"></input>
-                    <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.startDate} name="startDate" placeholder="Enter Start Date"></input>
-                    <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.endDate} name="endDate" placeholder="Enter End Date"></input>
-                    {active && <button type="button" onClick={() => handleDelete(item.id)}>Delete</button>}
+                <div key={item.id} className="input-container">
+                    <div className="inputs">
+                        <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.schoolName} name="schoolName" placeholder="Enter School Name"></input>
+                        <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.program} name="program" placeholder="Enter Program"></input>
+                        <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.startDate} name="startDate" placeholder="Enter Start Date"></input>
+                        <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.endDate} name="endDate" placeholder="Enter End Date"></input>
+                    </div>
+                    {active && <button className="del" type="button" onClick={() => handleDelete(item.id)}><img src={trashIcon}></img></button>}
                 </div>
                 ); 
             })}

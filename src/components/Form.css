@@ -18,7 +18,7 @@ input:disabled {
 }
 
 button {
-    display:block; 
+    display:flex; 
     margin:10px; 
     padding:10px; 
     border-style:none; 
@@ -33,4 +33,24 @@ button:hover {
     cursor:pointer; 
     background-color:rgb(44, 106, 238); 
     color:white; 
+}
+
+.del {
+    background-color:red; 
+}
+
+.del:hover {
+    background-color:rgb(154, 9, 9); 
+}
+
+.input-container {
+    display:flex; 
+    align-items:center; 
+    justify-content:left; 
+}
+
+.inputs {
+    display:grid; 
+    grid-template-columns: 1fr 1fr; 
+    justify-self:center; 
 }

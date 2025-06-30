@@ -1,6 +1,8 @@
 import { useState } from "react"
 import "./Form.css"
 
+import trashIcon from "/src/assets/trash.png"
+
 function ExpInfoForm({expList, setExpList}) {
 
     const [active, setActive] = useState(true); 
@@ -42,13 +44,15 @@ function ExpInfoForm({expList, setExpList}) {
             <h1>Experience</h1>
             {expList.map((item, index) => {
                 return (
-                <div key={item.id}>
-                    <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "companyName" value = {item.companyName} placeholder="Enter Company"></input>
-                    <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "position" value = {item.position} placeholder="Enter Position"></input>
-                    <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "responsibilities" value = {item.responsibilities} placeholder="Enter Responsibilities"></input>
-                    <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "startDate" value = {item.startDate} placeholder="Enter Start Date"></input>
-                    <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "endDate" value = {item.endDate} placeholder="Enter End Date"></input>
-                    {active && <button type="button" onClick={() => handleDelete(item.id)}>Delete</button>}
+                <div key={item.id} className="input-container">
+                    <div className="inputs">
+                        <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "companyName" value = {item.companyName} placeholder="Enter Company"></input>
+                        <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "position" value = {item.position} placeholder="Enter Position"></input>
+                        <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "responsibilities" value = {item.responsibilities} placeholder="Enter Responsibilities"></input>
+                        <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "startDate" value = {item.startDate} placeholder="Enter Start Date"></input>
+                        <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "endDate" value = {item.endDate} placeholder="Enter End Date"></input>
+                    </div>
+                    {active && <button className="del" type="button" onClick={() => handleDelete(item.id)}><img src={trashIcon}></img></button>}
                 </div>
                 ); 
             })}
