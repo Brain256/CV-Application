@@ -42,23 +42,49 @@ function ExpInfoForm({expList, setExpList}) {
     return (
         <>
             <h1>Experience</h1>
-            {expList.map((item, index) => {
-                return (
-                <div key={item.id} className="input-container">
-                    <div className="inputs">
-                        <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "companyName" value = {item.companyName} placeholder="Enter Company"></input>
-                        <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "position" value = {item.position} placeholder="Enter Position"></input>
-                        <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "responsibilities" value = {item.responsibilities} placeholder="Enter Responsibilities"></input>
-                        <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "startDate" value = {item.startDate} placeholder="Enter Start Date"></input>
-                        <input disabled={!active} onChange = {(e) => handleChange(e, index)} name = "endDate" value = {item.endDate} placeholder="Enter End Date"></input>
-                    </div>
-                    {active && <button className="del" type="button" onClick={() => handleDelete(item.id)}><img src={trashIcon}></img></button>}
-                </div>
-                ); 
-            })}
-            {active && <button type="button" onClick={handleAddExperience}>+ Add Experience</button>}
-            <button type="button" onClick={handleClick}>{active === true ? "Save" : "Edit"}</button>
+                {expList.map((item, index) => {
+                    return (
 
+                        <div key={item.id} className="input-container">
+                            <div className="header">
+                                <h2 className="input-header">Experience {index+1}</h2>
+                                {active && <button className="del" type="button" onClick={() => handleDelete(item.id)}><img src={trashIcon}></img></button>}
+                            </div>
+                            <div className="inputs" id="exp-input">
+                                <div>
+                                    <label htmlFor="companyName">Company Name</label>
+                                    <input name="companyName" disabled={!active} onChange={(e) => handleChange(e, index)} value={item.companyName} placeholder="Enter Company" />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="position">Position</label>
+                                    <input name="position" disabled={!active} onChange={(e) => handleChange(e, index)} value={item.position} placeholder="Enter Position" />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="startDate">Start Date</label>
+                                    <input name="startDate" disabled={!active} onChange={(e) => handleChange(e, index)} value={item.startDate} placeholder="Enter Start Date" />
+                                </div>
+
+                                <div>
+                                    <label htmlFor="endDate">End Date</label>
+                                    <input name="endDate" disabled={!active} onChange={(e) => handleChange(e, index)} value={item.endDate} placeholder="Enter End Date" />
+                                </div>
+
+                                <div className="textbox">
+                                    <label htmlFor="responsibilities">Responsibilities</label>
+                                    <textarea name="responsibilities" disabled={!active} onChange={(e) => handleChange(e, index)} value={item.responsibilities} placeholder="Enter Responsibilities" />
+                                </div>
+                            </div>
+                            
+                        </div>
+
+                    ); 
+                })}
+                <div className="change-buttons">
+                    {active && <button type="button" onClick={handleAddExperience}>+ Add Experience</button>}
+                    {expList.length > 0 && <button type="button" onClick={handleClick}>{active === true ? "Save" : "Edit"}</button>}
+                </div>
         </>
     );
 }

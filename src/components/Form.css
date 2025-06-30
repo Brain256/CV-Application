@@ -1,25 +1,43 @@
 h1 {
     font-size:2.5rem; 
     color:white; 
+    padding:10px; 
 }
 
-input {
+.input-header {
+    font-size:1.5rem; 
+    color:white; 
+    padding-left:10px; 
+}
+
+input, textarea {
     padding:10px; 
     border-radius:5px; 
     outline:none; 
     border:none; 
     margin:10px; 
     background-color:white; 
+    resize:none; 
+    width:90%; 
+
 }
 
-input:disabled {
+textarea {
+    width:95%; 
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    height:70%; 
+}
+
+input:disabled, textarea:disabled {
     background-color:rgb(199, 196, 196); 
     cursor:not-allowed; 
 }
 
 button {
     display:flex; 
-    margin:10px; 
+    flex-wrap:wrap; 
+    margin:10px;
+    margin-top:20px;  
     padding:10px; 
     border-style:none; 
     border-radius:10px; 
@@ -36,21 +54,57 @@ button:hover {
 }
 
 .del {
-    background-color:red; 
+    padding:10px; 
+    margin-top:14px; 
+    margin-left:5px; 
+    background-color:transparent; 
 }
 
 .del:hover {
-    background-color:rgb(154, 9, 9); 
+    background-color:rgb(125, 14, 14); 
 }
 
 .input-container {
     display:flex; 
     align-items:center; 
     justify-content:left; 
+    flex-wrap:wrap; 
 }
 
 .inputs {
     display:grid; 
     grid-template-columns: 1fr 1fr; 
-    justify-self:center; 
 }
+
+.textbox {
+    grid-column: 1 / 3; 
+    width:auto;
+}
+
+.change-buttons {
+    display:flex; 
+    flex-wrap:wrap; 
+}
+
+label {
+    margin:0px; 
+    padding:0px; 
+    color:white; 
+    padding-left:10px; 
+}
+
+.header {
+    display:flex; 
+    align-items:center; 
+    vertical-align:center; 
+    justify-content:space-between; 
+    width:100%; 
+}
+
+#exp-input {
+    display:grid; 
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 1fr 1fr 1.5fr; 
+
+}
+

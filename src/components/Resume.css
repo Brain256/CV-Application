@@ -27,3 +27,6 @@
     margin:0px; 
 }
 
+p {
+    white-space: pre-line; 
+}

@@ -4,7 +4,7 @@ body {
 
 .app-container {
     display:grid; 
-    grid-template-columns: 900px 2fr; 
+    grid-template-columns: 525px 2fr;
     width:100vw; 
     height:100vh; 
     overflow:hidden; 
@@ -13,14 +13,33 @@ body {
 
 .forms {
     padding:20px; 
-    display:grid; 
     overflow-y:auto; 
-    grid-template-rows: 1fr 2fr 2fr; 
     background-color:#1e3a8a; 
 }
 
 .resume {
+    min-width:800px; 
     display:flex; 
     justify-content:center; 
     padding:20px; 
+}
+
+.nav-container {
+    display:flex; 
+    flex-wrap:wrap; 
+    box-sizing:border-box; 
+    justify-content:center; 
+}
+
+.nav-container > button {
+    background-color:#1e3a8a; 
+    border-bottom: 4px solid white; 
+    border-radius:0px; 
+
+}
+
+.nav-container > button:hover {
+    cursor:pointer; 
+    border-radius:0px; 
+    border-bottom: 4px solid #3b82f6; 
 }

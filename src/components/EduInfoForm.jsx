@@ -39,22 +39,41 @@ function EduInfoForm({ educationList, setEducationList }) {
     return (
         <>
             <h1>Education</h1>
+            
             {educationList.map((item, index) => {
                 return (
-                <div key={item.id} className="input-container">
-                    <div className="inputs">
-                        <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.schoolName} name="schoolName" placeholder="Enter School Name"></input>
-                        <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.program} name="program" placeholder="Enter Program"></input>
-                        <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.startDate} name="startDate" placeholder="Enter Start Date"></input>
-                        <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.endDate} name="endDate" placeholder="Enter End Date"></input>
+
+                    <div key={item.id} className="input-container">
+                         <div className="header">
+                            <h2 className="input-header">Education {index+1}</h2>
+                            {active && <button className="del" type="button" onClick={() => handleDelete(item.id)}><img src={trashIcon}></img></button>}
+                        </div>
+                        <div className="inputs">
+                            <div>
+                                <label htmlFor="schoolName">School Name</label>
+                                <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.schoolName} name="schoolName" placeholder="Enter School Name" />
+                            </div>
+                            <div>
+                                <label htmlFor="program">Program</label>
+                                <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.program} name="program" placeholder="Enter Program" />
+                            </div>
+                            <div>
+                                <label htmlFor="startDate">Start Date</label>
+                                <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.startDate} name="startDate" placeholder="Enter Start Date" />
+                            </div>
+                            <div>
+                                <label htmlFor="endDate">End Date</label>
+                                <input disabled={!active} onChange={(e) => handleChange(e, index)} value={item.endDate} name="endDate" placeholder="Enter End Date" />
+                            </div>
+                        </div>
                     </div>
-                    {active && <button className="del" type="button" onClick={() => handleDelete(item.id)}><img src={trashIcon}></img></button>}
-                </div>
+
                 ); 
             })}
-            {active === true && <button type="button" onClick={handleAddEducation}>+ Add Education</button>}
-            <button type="button" onClick={handleClick}>{active === true ? "Save" : "Edit"}</button>
-            
+            <div className="change-buttons">
+                {active === true && <button type="button" onClick={handleAddEducation}>+ Add Education</button>}
+                {educationList.length > 0 && <button type="button" onClick={handleClick}>{active === true ? "Save" : "Edit"}</button>}
+            </div>
         </>
     ); 
 }
